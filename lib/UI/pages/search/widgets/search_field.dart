@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-class SearchIngredient extends StatelessWidget {
+class SearchField extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return TextFormField();
