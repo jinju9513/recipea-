@@ -16,14 +16,23 @@ class SearchPage extends StatelessWidget {
           Divider(color: Colors.black),
           RegistDoneIngredient(),
           SizedBox(height: 50),
-          ElevatedButton(
-            onPressed: () {
-              Navigator.push(
-                context,
-                MaterialPageRoute(builder: (context) => SearchResultPage()),
-              );
-            },
-            child: Text('검색하기'),
+          SizedBox(
+            width: 300,
+
+            child: ElevatedButton(
+              style: ElevatedButton.styleFrom(
+                backgroundColor: Colors.grey[200],
+                foregroundColor: Colors.blue,
+              ),
+
+              onPressed: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => SearchResultPage()),
+                );
+              },
+              child: Text('검색하기'),
+            ),
           ),
         ],
       ),
