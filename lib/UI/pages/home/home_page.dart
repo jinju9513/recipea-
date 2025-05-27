@@ -10,15 +10,29 @@ class HomePage extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Colors.purple,
-        title: Row(
-          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+        title: Stack(
           children: [
-            Text('Recipea'),
-            Icon(Icons.notifications),
-            Icon(Icons.search),
+            Center(
+              child: Text(
+                'Recipea',
+                style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
+              ),
+            ),
+
+            Positioned(
+              right: 0,
+              child: Row(
+                children: [
+                  Icon(Icons.notifications),
+                  SizedBox(width: 16),
+                  Icon(Icons.search),
+                ],
+              ),
+            ),
           ],
         ),
       ),
+
       body: ListView(
         children: [
           HomeBanner(),

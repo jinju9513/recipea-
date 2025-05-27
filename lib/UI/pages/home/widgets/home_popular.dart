@@ -17,9 +17,17 @@ class HomePopular extends StatelessWidget {
               scrollDirection: Axis.horizontal,
               itemCount: 10,
               itemBuilder: (context, index) {
-                return Container(
-                  decoration: BoxDecoration(color: Colors.green),
-                  child: Text('예시 인기있는'),
+                return Padding(
+                  padding: const EdgeInsets.all(8.0),
+                  child: AspectRatio(
+                    aspectRatio: 1,
+                    child: Container(
+                      width: 200,
+                      height: 200,
+                      decoration: BoxDecoration(color: Colors.green),
+                      child: Text('예시 인기있는'),
+                    ),
+                  ),
                 );
               },
             ),
