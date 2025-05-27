@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 
-class HomeBanner extends StatelessWidget {
+class BottomBar extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return Text('banner');
+    return Text('bottombar');
   }
 }
