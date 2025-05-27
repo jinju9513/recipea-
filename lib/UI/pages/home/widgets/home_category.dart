@@ -8,8 +8,15 @@ class HomeCategory extends StatelessWidget {
       child: Wrap(
         spacing: 12,
         runSpacing: 12,
-        children: List.generate(30, (index) {
-          return Container(width: 100, height: 100, color: Colors.amber);
+        children: List.generate(12, (index) {
+          return Container(
+            decoration: BoxDecoration(
+              borderRadius: BorderRadius.circular(10),
+              color: Colors.amber,
+            ),
+            width: 55,
+            height: 55,
+          );
         }),
       ),
     );

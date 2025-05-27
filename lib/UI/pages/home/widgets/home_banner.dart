@@ -4,7 +4,7 @@ class HomeBanner extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SizedBox(
-      height: 500,
+      height: 300,
       child: PageView.builder(
         itemCount: 10,
         itemBuilder: (context, index) {
