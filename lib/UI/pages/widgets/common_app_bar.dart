@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-AppBar buildMyAppBar(String titleText) {
+AppBar commonAppBar(String titleText) {
   return AppBar(
     backgroundColor: Colors.white,
     foregroundColor: Colors.black,
