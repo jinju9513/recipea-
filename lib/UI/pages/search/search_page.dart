@@ -13,6 +13,7 @@ class SearchPage extends StatelessWidget {
         children: [
           SearchIngredient(),
           MyRefrigIngredient(),
+          Divider(color: Colors.black),
           RegistDoneIngredient(),
           ElevatedButton(
             onPressed: () {

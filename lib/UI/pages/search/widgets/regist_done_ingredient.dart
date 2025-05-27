@@ -3,6 +3,19 @@ import 'package:flutter/material.dart';
 class RegistDoneIngredient extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return Text('검색 등록된 재료');
+    return Wrap(
+      children: List.generate(15, (index) {
+        return Padding(
+          padding: const EdgeInsets.all(8.0),
+          child: Container(
+            decoration: BoxDecoration(
+              color: Colors.yellow,
+              borderRadius: BorderRadius.circular(10),
+            ),
+            child: Text('재료들'),
+          ),
+        );
+      }),
+    );
   }
 }
