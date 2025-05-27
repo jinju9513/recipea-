@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:recipea_app/UI/pages/refirg/my_frigerator_list_page.dart';
 import 'package:recipea_app/UI/pages/refirg/widgets/ingredient_category_tabs.dart';
 import 'package:recipea_app/UI/pages/refirg/widgets/ingredient_grid.dart';
-import 'package:recipea_app/UI/pages/refirg/widgets/refirg_app_bar.dart';
+import 'package:recipea_app/UI/pages/widgets/common_app_bar.dart';
 
 class IngredientRegisterPage extends StatefulWidget {
   const IngredientRegisterPage({super.key});
@@ -46,7 +46,7 @@ class _IngredientRegisterPageState extends State<IngredientRegisterPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: buildMyAppBar('MY 냉장고'),
+      appBar: commonAppBar('MY 냉장고'),
       body: Column(
         children: [
           const SizedBox(height: 16),

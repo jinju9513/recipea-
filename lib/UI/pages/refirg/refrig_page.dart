@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:recipea_app/UI/pages/refirg/ingredient_register_page.dart';
-import 'package:recipea_app/UI/pages/refirg/widgets/refirg_app_bar.dart';
+import 'package:recipea_app/UI/pages/widgets/common_app_bar.dart';
 import 'package:recipea_app/core/colors.dart';
 
 class RefrigPage extends StatelessWidget {
@@ -9,7 +9,7 @@ class RefrigPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar:buildMyAppBar('My냉장고'),
+      appBar:commonAppBar('My냉장고'),
       body: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
