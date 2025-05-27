@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:recipea_app/UI/pages/refirg/ingredient_register_page.dart';
+import 'package:recipea_app/UI/pages/refirg/widgets/refirg_app_bar.dart';
+import 'package:recipea_app/core/colors.dart';
 
 class RefrigPage extends StatelessWidget {
   const RefrigPage({super.key});
@@ -6,34 +9,7 @@ class RefrigPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        backgroundColor: Colors.white,
-        leading: IconButton(
-          icon: const Icon(Icons.arrow_back, color: Colors.deepPurple),
-          onPressed: () {
-            Navigator.pop(context);
-          },
-        ),
-        title: const Text(
-          'MY 냉장고',
-          style: TextStyle(
-            color: Colors.deepPurple,
-            fontWeight: FontWeight.bold,
-          ),
-        ),
-        actions: [
-          IconButton(
-            icon: const Icon(Icons.notifications_none, color: Colors.black),
-            onPressed: () {},
-          ),
-          IconButton(
-            icon: const Icon(Icons.shopping_cart_outlined, color: Colors.black),
-            onPressed: () {},
-          ),
-        ],
-        elevation: 1,
-        centerTitle: false,
-      ),
+      appBar:buildMyAppBar('My냉장고'),
       body: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
@@ -49,14 +25,17 @@ class RefrigPage extends StatelessWidget {
             const SizedBox(height: 24),
             ElevatedButton(
               style: ElevatedButton.styleFrom(
-                backgroundColor: Colors.deepPurple,
+                backgroundColor: AppColors.mainPink,
                 shape: RoundedRectangleBorder(
                   borderRadius: BorderRadius.circular(20),
                 ),
                 padding: const EdgeInsets.symmetric(horizontal: 24, vertical: 12),
               ),
               onPressed: () {
-                // 재료 등록 페이지로 이동
+                Navigator.push(
+              context,
+              MaterialPageRoute(builder: (_) => const IngredientRegisterPage()),
+            );
               },
               child: const Text(
                 '재료 등록하기',
