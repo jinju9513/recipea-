@@ -3,6 +3,7 @@ import 'package:material_design_icons_flutter/material_design_icons_flutter.dart
 import 'package:recipea_app/UI/pages/my_page/widgets/icon_text_item.dart';
 import 'package:recipea_app/UI/pages/my_page/widgets/section_container.dart';
 import 'package:recipea_app/UI/pages/my_page/widgets/user_header.dart';
+import 'package:recipea_app/UI/pages/refirg/refrig_page.dart';
 
 class MyPage extends StatelessWidget {
   const MyPage({super.key});
@@ -37,7 +38,7 @@ class MyPage extends StatelessWidget {
           child: Column(
             children: [
               UserHeader(),
-              _buildRecipeSection(),
+              _buildRecipeSection(context),
               _buildShoppingSection(),
             ],
           ),
@@ -46,14 +47,23 @@ class MyPage extends StatelessWidget {
     );
   }
 
-  Widget _buildRecipeSection() {
+  Widget _buildRecipeSection(BuildContext context) {
     return SectionContainer(
       title: '레시피',
       children: [
-        IconTextItem(label: '내가 본 레시피', icon: Icons.remove_red_eye, value: '3'),
-        IconTextItem(label: '스크랩', icon: Icons.bookmark_border, value: '0'),
-        IconTextItem(label: 'MY냉장고', icon: MdiIcons.fridge, value: '0'),
-        IconTextItem(label: '노트', icon: Icons.note_outlined, value: '0'),
+        IconTextItem(label: '내가 본 레시피', icon: Icons.remove_red_eye),
+        IconTextItem(label: '스크랩', icon: Icons.bookmark_border),
+        IconTextItem(
+          label: 'MY냉장고',
+          icon: MdiIcons.fridge,
+          onTap: () {
+            Navigator.push(
+              context,
+              MaterialPageRoute(builder: (_) => const RefrigPage()),
+            );
+          },
+        ),
+        IconTextItem(label: '노트', icon: Icons.note_outlined),
       ],
     );
   }
@@ -63,18 +73,10 @@ class MyPage extends StatelessWidget {
       title: '쇼핑',
       // subtitle: '적립금 0원',
       children: const [
-        IconTextItem(
-          label: '내가 본 상품',
-          icon: Icons.remove_red_eye_outlined,
-          value: '0',
-        ),
-        IconTextItem(label: '구매내역', icon: Icons.credit_card, value: '0/0'),
-        IconTextItem(
-          label: '장바구니/찜',
-          icon: Icons.shopping_cart_outlined,
-          value: '0/0',
-        ),
-        IconTextItem(label: '쿠폰', icon: Icons.local_offer_outlined, value: '7'),
+        IconTextItem(label: '내가 본 상품', icon: Icons.remove_red_eye_outlined),
+        IconTextItem(label: '구매내역', icon: Icons.credit_card),
+        IconTextItem(label: '장바구니/찜', icon: Icons.shopping_cart_outlined),
+        IconTextItem(label: '쿠폰', icon: Icons.local_offer_outlined),
       ],
     );
   }
