@@ -11,6 +11,7 @@ class HomePage extends StatelessWidget {
       appBar: AppBar(
         backgroundColor: Colors.purple,
         title: Row(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
             Text('Recipea'),
             Icon(Icons.notifications),
