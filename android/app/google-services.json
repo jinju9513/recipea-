@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "556246014709",
+    "project_id": "recipea-app",
+    "storage_bucket": "recipea-app.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:556246014709:android:3bc7a8cd720fa5331d83bc",
+        "android_client_info": {
+          "package_name": "com.example.recipea_app"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCtQWy5JNj8IIzxCXYyHlReG7C4tVloAns"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
