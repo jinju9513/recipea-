@@ -13,7 +13,7 @@ class Login extends ConsumerWidget {
     final authVM = ref.watch(authViewModelProvider.notifier);
     final user = ref.watch(authViewModelProvider);
     return Scaffold(
-      appBar: commonAppBar('마이페이지'),
+      appBar: commonAppBar('로그인'),
       backgroundColor: Colors.white,
       body: SafeArea(
         child: Center(
