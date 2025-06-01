@@ -1,12 +1,16 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:recipea_app/UI/pages/widgets/common_app_bar.dart';
 import 'package:recipea_app/core/colors.dart';
+import 'package:recipea_app/providers/auth_provider.dart';
 
-class Login extends StatelessWidget {
+class Login extends ConsumerWidget {
   const Login({super.key});
 
   @override
-  Widget build(BuildContext context) {
+  Widget build(BuildContext context, WidgetRef ref) {
+    final authVM = ref.watch(authViewModelProvider.notifier);
+    final user = ref.watch(authViewModelProvider);
     return Scaffold(
       appBar: commonAppBar('마이페이지'),
       backgroundColor: Colors.white,
@@ -28,8 +32,17 @@ class Login extends StatelessWidget {
                 ),
                 const SizedBox(height: 24),
                 ElevatedButton.icon(
-                  onPressed: () {
-                    // Google 로그인 연동
+                  onPressed: () async {
+                    await authVM.loginWithGoogle();
+
+                    if (ref.read(authViewModelProvider) != null) {
+                      // 로그인 성공 시 페이지 이동
+                      Navigator.pushReplacementNamed(context, '/mypage');
+                    } else {
+                      ScaffoldMessenger.of(context).showSnackBar(
+                        const SnackBar(content: Text('로그인에 실패했습니다.')),
+                      );
+                    }
                   },
                   icon: const Icon(Icons.login, color: Colors.white),
                   label: const Text(
