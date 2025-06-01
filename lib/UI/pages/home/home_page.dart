@@ -51,7 +51,6 @@ class HomePage extends StatelessWidget {
           HomePopular(),
         ],
       ),
-      bottomNavigationBar: BottomAppBar(child: BottomBar()),
     );
   }
 }
