@@ -1,19 +1,20 @@
 import 'package:flutter/material.dart';
-import 'package:recipea_app/UI/pages/home/home_page.dart';
-import 'package:recipea_app/UI/pages/my_page/my_page.dart';
-import 'package:recipea_app/UI/pages/search/search_page.dart';
+import 'package:firebase_auth/firebase_auth.dart';
+import 'package:go_router/go_router.dart';
 
 class BottomBar extends StatelessWidget {
+  const BottomBar({super.key});
+
   @override
   Widget build(BuildContext context) {
     return Row(
       mainAxisAlignment: MainAxisAlignment.spaceAround,
       children: [
-        _buildNavItem(context, Icons.home, '홈', HomePage()),
-        _buildNavItem(context, Icons.forum, '라운지', MyPage()),
-        _buildNavItem(context, Icons.category, '카테고리', MyPage()),
-        _buildNavItem(context, Icons.search, '검색', SearchPage()),
-        _buildNavItem(context, Icons.person, '마이페이지', MyPage()),
+        _buildNavItem(context, Icons.home, '홈', '/home'),
+        _buildNavItem(context, Icons.forum, '라운지', '/lounge'),
+        _buildNavItem(context, Icons.category, '카테고리', '/category'),
+        _buildNavItem(context, Icons.search, '검색', '/search'),
+        _buildNavItem(context, Icons.person, '마이페이지', '/mypage', isMyPage: true),
       ],
     );
   }
@@ -22,16 +23,25 @@ class BottomBar extends StatelessWidget {
     BuildContext context,
     IconData icon,
     String label,
-    Widget targetPage,
-  ) {
+    String routePath, {
+    bool isMyPage = false,
+  }) {
     return GestureDetector(
       onTap: () {
-        Navigator.push(
-          context,
-          MaterialPageRoute(builder: (context) => targetPage),
-        );
+        if (isMyPage && FirebaseAuth.instance.currentUser == null) {
+          context.go('/login');
+        } else {
+          context.go(routePath);
+        }
       },
-      child: Column(children: [Icon(icon), SizedBox(height: 10), Text(label)]),
+      child: Column(
+        mainAxisSize: MainAxisSize.min,
+        children: [
+          Icon(icon),
+          const SizedBox(height: 10),
+          Text(label),
+        ],
+      ),
     );
   }
 }
