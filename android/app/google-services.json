@@ -12,7 +12,20 @@
           "package_name": "com.example.recipea_app"
         }
       },
-      "oauth_client": [],
+      "oauth_client": [
+        {
+          "client_id": "556246014709-bdlt6u9rr5n36hiq8lo8q6ijqi14kjtd.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.recipea_app",
+            "certificate_hash": "b86a4937e671d2b05f2752151fdf9bf8296c878e"
+          }
+        },
+        {
+          "client_id": "556246014709-ape3emm85imvialersipujhkhklnnenm.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
       "api_key": [
         {
           "current_key": "AIzaSyCtQWy5JNj8IIzxCXYyHlReG7C4tVloAns"
@@ -20,7 +33,19 @@
       ],
       "services": {
         "appinvite_service": {
-          "other_platform_oauth_client": []
+          "other_platform_oauth_client": [
+            {
+              "client_id": "556246014709-ape3emm85imvialersipujhkhklnnenm.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "556246014709-2bbd3krdrooauiq5pvrl2sla1rgkjg3b.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.example.recipeaApp"
+              }
+            }
+          ]
         }
       }
     }
