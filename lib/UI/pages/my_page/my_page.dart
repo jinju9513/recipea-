@@ -1,21 +1,24 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:go_router/go_router.dart';
 import 'package:material_design_icons_flutter/material_design_icons_flutter.dart';
 import 'package:recipea_app/UI/pages/my_page/widgets/icon_text_item.dart';
 import 'package:recipea_app/UI/pages/my_page/widgets/section_container.dart';
 import 'package:recipea_app/UI/pages/my_page/widgets/user_header.dart';
 import 'package:recipea_app/UI/pages/refirg/refrig_page.dart';
+import 'package:recipea_app/providers/auth_provider.dart';
 
-class MyPage extends StatelessWidget {
+class MyPage extends ConsumerWidget {
   const MyPage({super.key});
 
   @override
-  Widget build(BuildContext context) {
+  Widget build(BuildContext context,WidgetRef ref) {
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Colors.white,
         elevation: 1,
         title: const Text(
-          '마이컬리',
+          'recipea',
           style: TextStyle(
             color: Colors.black,
             fontSize: 20,
@@ -26,9 +29,9 @@ class MyPage extends StatelessWidget {
         actions: [
           IconButton(
             icon: const Icon(Icons.logout, color: Colors.black),
-            onPressed: () {
-              // TODO: 로그아웃 처리 로직
-              print('로그아웃 클릭됨');
+            onPressed: () async {
+              await ref.read(authViewModelProvider.notifier).logout();
+              context.go('/login');
             },
           ),
         ],
